@@ -1,0 +1,23 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+
+    <form method="post" action="{{ url_for('index') }}">
+        {{ add_task_form.csrf_token }}
+        {{ add_task_form.title.label }} {{ add_task_form.title }}
+        {{ add_task_form.submit }}
+    </form>
+
+    <form method="post" action="{{ url_for('index') }}">
+        {{ delete_task_form.csrf_token }}
+        {{ delete_task_form.submit }}
+    </form>
+</body>
+</html>
